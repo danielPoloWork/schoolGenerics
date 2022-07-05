@@ -2,8 +2,9 @@ package entities;
 
 import enums.ENGradeValue;
 import enums.ENSubjectType;
+import interfaces.INEntity;
 
-public class Grade {
+public class Grade implements INEntity {
   private final String id;
   private final ENGradeValue value;
   private final ENSubjectType subject;

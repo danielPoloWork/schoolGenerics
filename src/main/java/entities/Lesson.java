@@ -1,8 +1,9 @@
 package entities;
 
+import interfaces.INEntity;
 import java.util.List;
 
-public class Lesson {
+public class Lesson implements INEntity {
 
   // DECLARATION
   private final String id;

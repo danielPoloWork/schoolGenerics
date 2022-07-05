@@ -1,8 +1,9 @@
 package entities;
 
 import enums.ENPersonRole;
+import interfaces.INEntity;
 
-public class Person {
+public class Person implements INEntity {
   private final String id;
   private final String name;
   private final String surname;
