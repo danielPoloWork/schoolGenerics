@@ -14,10 +14,10 @@ public class Grade implements INEntity {
 
   private String updateDateTime;
 
-  public Grade(String id, ENGradeValue grade, ENSubjectType subject, String studentId,
+  public Grade(String id, ENGradeValue value, ENSubjectType subject, String studentId,
       String teacherId, String createDateTime) {
     this.id = id;
-    this.value = grade;
+    this.value = value;
     this.subject = subject;
     this.studentId = studentId;
     this.teacherId = teacherId;
@@ -25,26 +25,26 @@ public class Grade implements INEntity {
   }
 
   public String getId() {
-    return id;
+    return this.id;
   }
 
   public ENGradeValue getValue() {
-    return value;
+    return this.value;
   }
 
   public ENSubjectType getSubject() {
-    return subject;
+    return this.subject;
   }
 
   public String getStudentId() {
-    return studentId;
+    return this.studentId;
   }
 
   public String getTeacherId() {
-    return teacherId;
+    return this.teacherId;
   }
 
   public String getCreateDateTime() {
-    return createDateTime;
+    return this.createDateTime;
   }
 }
