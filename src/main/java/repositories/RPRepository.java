@@ -6,9 +6,11 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
+import utils.UTRandomMethod;
 
 public class RPRepository implements INRepository<INEntity> {
 
+  private static final int ID_LENGTH = 9;
   private final Map<String, INEntity> databaseTable;
 
   public RPRepository() {
@@ -17,17 +19,22 @@ public class RPRepository implements INRepository<INEntity> {
 
   @Override
   public INEntity insertObject(INEntity objectArg) {
-    return null;
+    return this.databaseTable.put(objectArg.getId(), objectArg);
   }
 
   @Override
   public Optional<INEntity> findById(String objectId) {
-    return Optional.empty();
+    return Optional.ofNullable(this.databaseTable.get(objectId));
   }
 
   @Override
   public String generateRandomId() {
-    return null;
+    UTRandomMethod random = new UTRandomMethod();
+    String id =  random.generateString(ID_LENGTH);
+    while (this.databaseTable.containsKey(id)) {
+      id = random.generateString(ID_LENGTH);;
+    }
+    return id;
   }
 
   @Override
